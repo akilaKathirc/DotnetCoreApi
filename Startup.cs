@@ -20,6 +20,7 @@ using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using WebApplication2.Helpers;
+using AutoMapper;
 
 namespace WebApplication2
 {
@@ -35,7 +36,7 @@ namespace WebApplication2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddSwaggerGen(c =>
             {
@@ -48,8 +49,19 @@ namespace WebApplication2
             });
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();
+
+            //------------------------------ AutoMapper  ----------------------------//
+
+            services.AddAutoMapper(typeof(DatingRepository).Assembly);
+
+
+            //------------------------------Data----------------------------//
+
             services.AddScoped<IAuthRepository, AuthRepository>();
-           
+            services.AddScoped<IDatingRepository, DatingRepository>();
+
+            //------------------------------Authentication using JWT----------------------------//
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

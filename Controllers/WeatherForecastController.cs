@@ -32,20 +32,20 @@ namespace WebApplication2.Controllers
         //{
         //    _logger = logger;
         //}
- [AllowAnonymous]
-        [HttpGet("GetWheathers")]
-       public  async Task<IActionResult> GetWheathers()
-        {
-            var response =await _context.Weathers.ToListAsync();
-            return Ok(response);
-        }
- [AllowAnonymous]
-        [HttpGet("GetWheathers/{id}")]
-        public async  Task<IActionResult> GetWheather(int id)
-        {
-            var response =await _context.Weathers.FirstOrDefaultAsync(x => x.Id == id);
-            return Ok(response);
-        }
+ //[AllowAnonymous]
+ //       [HttpGet("GetWheathers")]
+ //      public  async Task<IActionResult> GetWheathers()
+ //       {
+ //           var response =await _context.Weathers.ToListAsync();
+ //           return Ok(response);
+ //       }
+ //[AllowAnonymous]
+ //       [HttpGet("GetWheathers/{id}")]
+ //       public async  Task<IActionResult> GetWheather(int id)
+ //       {
+ //           var response =await _context.Weathers.FirstOrDefaultAsync(x => x.Id == id);
+ //           return Ok(response);
+ //       }
 
 
     }

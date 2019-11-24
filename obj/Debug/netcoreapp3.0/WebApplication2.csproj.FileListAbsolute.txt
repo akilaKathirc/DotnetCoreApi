@@ -1,5 +1,6 @@
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\appsettings.Development.json
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\appsettings.json
+C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\Data\UserSeedData.json
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\WebApplication2.exe
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\WebApplication2.deps.json
@@ -134,11 +135,14 @@ C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\staticwebassets\WebApplication2.StaticWebAssets.Manifest.cache
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\staticwebassets\WebApplication2.StaticWebAssets.xml
-C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.AssemblyInfoInputs.cache
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.AssemblyInfo.cs
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.RazorTargetAssemblyInfo.cache
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.csproj.CopyComplete
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.dll
 C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.pdb
+C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\AutoMapper.dll
+C:\Users\Dell\source\repos\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell\source\repos\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\WebApplication2.MvcApplicationPartsAssemblyInfo.cache

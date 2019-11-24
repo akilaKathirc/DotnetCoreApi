@@ -14,8 +14,9 @@ namespace WebApplication2.Data
 
         }
 
-        public DbSet<WeatherForecast> Weathers { get; set; }
 
         public DbSet<Users> Users { get; set; }
+
+       public DbSet<Photos> Photos { get; set; }
     }
 }
