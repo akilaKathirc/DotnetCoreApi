@@ -13,5 +13,9 @@ namespace WebApplication2.Data
       Task<bool> SaveAll();
       Task<IEnumerable<Users>> GetAllUsers();
      Task<Users> GetUser(int ID);
+
+        Task<Photos> GetPhotos(int ID);
+
+        Task<Photos> GetMainPhotoForUser(int ID);
     }
 }

@@ -19,6 +19,11 @@ namespace WebApplication2.Helpers
                  .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.isMain).url))
                   .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculatAge()));
             CreateMap<Photos, PhotosForDetailsDto>();
+            CreateMap<UserForUpdateDto, Users>();
+            CreateMap<Photos, PhotoToReturnDTO>();
+            CreateMap<PhotoForCreationDto, Photos>();
+
+            CreateMap<UserToRegisterDto, Users>();
         }
 
      

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,13 @@ namespace WebApplication2.Helpers
             if (DateofBirth.Date > today.AddYears(-age))
                 return age--;
             return age;
+        }
+        
+        public static void AddPagination(this HttpResponse response, int CurrentPage, int ItemsPerPage, int TotalItems, int TotalPage)
+        {
+            var paginationHeader = new PaginationHelper(CurrentPage, ItemsPerPage, TotalItems, TotalPage);
+            response.Headers.Add("Pagination", JsonConvert.SerializeObject(paginationHeader));
+            response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
         }
     }
 }

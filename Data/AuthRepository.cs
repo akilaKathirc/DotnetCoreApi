@@ -17,7 +17,7 @@ namespace WebApplication2.Data
         }
         public async  Task<Users> Login(string name, string password)
         {
-            var user =await _context.Users.FirstOrDefaultAsync(x => x.UserName == name);
+            var user =await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.UserName == name);
 
             if (user == null)
                 return null;

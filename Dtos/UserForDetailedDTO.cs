@@ -21,6 +21,10 @@ namespace WebApplication2.Dtos
         public DateTime LastActive { get; set; }
         public string UserName { get; set; }
         public string PhotoUrl { get; set; }
+        public string LookingFor { get; set; }
+        public string Introduction { get; set; }
+
+        public string Interest { get; set; }
 
         public ICollection<PhotosForDetailsDto> Photos { get; set; }
     }

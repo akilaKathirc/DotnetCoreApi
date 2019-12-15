@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -18,11 +19,13 @@ namespace WebApplication2.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
+        private readonly IMapper _mapper;
 
-        public AuthController(IAuthRepository repo,IConfiguration config)
+        public AuthController(IAuthRepository repo,IConfiguration config, IMapper mapper)
         {
             _repo = repo;
             _config = config;
+            _mapper = mapper;
         }
 
         [HttpPost("register")]
@@ -32,13 +35,12 @@ namespace WebApplication2.Controllers
             if (await _repo.UserExists(userToRegisterDto.userName))
                 return BadRequest("User already exists");
 
-            var userToCreate = new Users
-            {
-                UserName = userToRegisterDto.userName
-            };
+            var userToCreate = _mapper.Map<Users>(userToRegisterDto);
 
             var createdUser = await _repo.Register(userToCreate, userToRegisterDto.passWord);
-            return StatusCode(201);
+
+            var userToReturn = _mapper.Map<UserForDetailedDTO>(createdUser);
+            return CreatedAtRoute("GetUser",new { controller = "Users", id= createdUser.Id }, userToReturn);
         }
 
 
@@ -70,10 +72,11 @@ namespace WebApplication2.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var token = tokenHandler.CreateToken(TokenDescriptor);
-
+            var loggedInUuser = _mapper.Map<UserForListDto>(userFromRepo);
             return Ok(new
             {
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                user= loggedInUuser
             });
 
         }

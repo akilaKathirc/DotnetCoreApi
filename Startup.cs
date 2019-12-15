@@ -50,6 +50,9 @@ namespace WebApplication2
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();
 
+            //------------------------------ Cloudinary  ----------------------------//
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+
             //------------------------------ AutoMapper  ----------------------------//
 
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
@@ -59,6 +62,12 @@ namespace WebApplication2
 
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
+
+
+            //------------------------------Logging----------------------------//
+            services.AddScoped<LogUserActivity>();
+
+
 
             //------------------------------Authentication using JWT----------------------------//
 

@@ -33,6 +33,18 @@ namespace WebApplication2.Data
             return users;
         }
 
+        public async Task<Photos> GetMainPhotoForUser(int ID)
+        {
+            var PhotosFromRepo = await _context.Photos.Where(u => u.UserId == ID).FirstOrDefaultAsync(u => u.isMain == true);
+            return PhotosFromRepo;
+        }
+
+        public async Task<Photos> GetPhotos(int ID)
+        {
+            var PhotosFromRepo = await _context.Photos.FirstOrDefaultAsync(u => u.ID == ID);
+            return PhotosFromRepo;
+        }
+
         public async Task<Users> GetUser(int ID)
         {
             var user =await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == ID);
